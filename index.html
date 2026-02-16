@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Budget Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Budget Tracker</h1>
+    <h2 id="monthLabel" style="text-align:center;"></h2>
+
+    <div class="layout">
+    <div class="left-column">
+    <section class="card">
+      <h2>Set Budget</h2>
+      <input type="number" id="budgetInput" placeholder="Enter budget">
+      <button id="setBudgetBtn">Set Budget</button>
+    </section>
+
+    <section class="card">
+      <h2>Add Expense</h2>
+      <input type="text" id="expenseName" placeholder="Expense name">
+      <input type="number" id="expenseAmount" placeholder="Amount">
+
+      <select id="expenseCategory">
+        <option value="Food">Food</option>
+        <option value="Rent">Rent</option>
+        <option value="Fun">Fun</option>
+        <option value="Transport">Transport</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <button id="addExpenseBtn">Add Expense</button>
+    </section>
+
+    <section class="card summary">
+      <div>
+        <h3>Budget</h3>
+        <p id="totalBudget">$0</p>
+      </div>
+      <div>
+        <h3>Expenses</h3>
+        <p id="totalExpenses">$0</p>
+      </div>
+      <div>
+        <h3>Remaining</h3>
+        <p id="remaining">$0</p>
+      </div>
+    </section>
+
+    <section class="card">
+  <button id="resetMonthBtn" style="background:#f44336;">Reset This Month</button>
+</section>
+</div>
+
+<div class="right-column">
+    <section class="card">
+      <h2>Expenses</h2>
+      <ul id="expenseList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Spending Breakdown</h2>
+      <canvas id="expenseChart"></canvas>
+    </section>
+  </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
